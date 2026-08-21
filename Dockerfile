@@ -20,6 +20,8 @@ WORKDIR /app
 COPY --from=build /app/target/*.jar /app/app.jar
 
 
+RUN echo "===== CHECKING JAR =====" && ls -lah /app && echo "===== END CHECK ====="
+
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-jar", "/app/app.jar"]
+CMD ["java", "-jar", "/app/app.jar"]

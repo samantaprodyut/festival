@@ -621,3 +621,5 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
         font-size:36px;
     }
 }
+
+#top{scroll-margin-top:80px;}

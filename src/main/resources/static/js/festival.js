@@ -100,7 +100,7 @@ function renderDay(i){
 renderDay(0);
 
 /* -------- competition switch -------- */
-document.querySelectorAll('.switch button').forEach(b=>{
+/*document.querySelectorAll('.switch button').forEach(b=>{
   b.onclick=()=>{
     document.querySelectorAll('.switch button').forEach(x=>x.setAttribute('aria-selected','false'));
     b.setAttribute('aria-selected','true');
@@ -109,6 +109,36 @@ document.querySelectorAll('.switch button').forEach(b=>{
     document.getElementById('pane-music').hidden=!music;
     document.getElementById('compete').style.setProperty('--accent',music?'var(--turquoise)':'var(--gold)');
   };
+});*/
+
+document.querySelectorAll('.switch button').forEach(b => {
+
+  b.onclick = () => {
+
+    document.querySelectorAll('.switch button').forEach(x =>
+      x.setAttribute('aria-selected', 'false')
+    );
+
+    b.setAttribute('aria-selected', 'true');
+
+    const channel = b.dataset.ch;
+
+    document.getElementById('pane-film').hidden = channel !== 'film';
+    document.getElementById('pane-music').hidden = channel !== 'music';
+    document.getElementById('pane-reel').hidden = channel !== 'reel';
+
+    const accent =
+      channel === 'music'
+        ? 'var(--turquoise)'
+        : channel === 'reel'
+          ? 'var(--pink)'
+          : 'var(--gold)';
+
+    document
+      .getElementById('compete')
+      .style.setProperty('--accent', accent);
+  };
+
 });
 
 /* -------- count-up stats -------- */

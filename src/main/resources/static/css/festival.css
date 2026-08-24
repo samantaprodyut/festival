@@ -354,7 +354,12 @@ nav.top .nav-link:hover{color:var(--ink);}
   color:var(--ink);
   letter-spacing:-.03em;
 }
-
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
 
 /* ---------- avatar colours ---------- */
 

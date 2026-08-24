@@ -23,7 +23,7 @@ Object.entries(bands).forEach(([id,words])=>{
 
 /* -------- programme data -------- */
 const DAYS=[
- {n:"Day 01",date:"Thu 24 Oct",slots:[
+ {n:"Day 01",date:"Thu 22 Oct",slots:[
   ["10:00 – 11:15","Discovery","Inauguration","Inauguration","Invocation music, mascot launch, addresses by the Guests of Honour and a keynote from the Chief Guest.","both"],
   ["11:15 – 12:30","Discovery","Fireside chat","From Script to Strike","Building high-intensity cinema: writing under pressure, staging action and holding an audience.","film"],
   ["12:30 – 13:30","Discovery","Fireside chat","The Sound Between the Frames","Sound is the half of cinema an audience feels but never sees — from location recording to the final mix.","music"],
@@ -41,7 +41,7 @@ const DAYS=[
   ["17:30 – 18:30","Online","Panel","The Editor's Cut","Editors, colourists and VFX artists on building worlds after the shoot is over.","film"],
   ["19:00 – 20:00","Outdoor stage","Showcase","The Runway Edit","The runway reimagined as cinema, where every garment is a frame.","both"],
   ["20:00 – 21:00","Outdoor stage","Competition","The MicDrop","A single spotlight, a silent stage and a voice that dares to fill it.","music"]]},
- {n:"Day 02",date:"Fri 25 Oct",slots:[
+ {n:"Day 02",date:"Fri 23 Oct",slots:[
   ["10:00 – 11:30","Online","Fireside chat","The Pulse of the Scene","How filmmakers build emotional truth out of image, sound and silence.","film"],
   ["10:00 – 12:00","Auro Student Center","Workshop","Rhythm in Motion","Choreographing to the language of musical tempo.","music"],
   ["10:00 – 12:00","Executive Classroom","Workshop","Lighting the Mood","Light, colour and shadow, and the psychology of how an audience reads them.","film"],
@@ -60,7 +60,7 @@ const DAYS=[
   ["15:30 – 17:00","Online","Panel","Animated Realities","Bringing unreal worlds to life, from idea to movement.","film"],
   ["17:30 – 18:30","Outdoor stage","Competition","Jam Wars","Battle of the bands — a high-energy live jam on the main stage.","music"],
   ["19:00 – 20:30","Outdoor stage","Competition","Groove Clash","The dance face-off, where every move speaks louder than words.","music"]]},
- {n:"Day 03",date:"Sat 26 Oct",slots:[
+ {n:"Day 03",date:"Sat 24 Oct",slots:[
   ["10:00 – 11:30","Discovery","Screening + chat","History Breathes: Anjaan","A documentary on the lyricist, followed by an interaction with his family.","film"],
   ["10:00 – 13:00","Executive Classroom","Jury viewing","Cinematic Spotlight","Closed jury screening of the nominated and selected films.","film"],
   ["10:30 – 12:00","Auro Student Center","Lecture-demo","The Living Raag","The classical foundation under popular music, performed as it is explained.","music"],
@@ -73,7 +73,7 @@ const DAYS=[
   ["15:30 – 17:00","Discovery","Screening","Cinematic Spotlight","The second public screening block of nominated and selected films.","film"],
   ["15:30 – 17:00","Outdoor stage","Showcase","Sur Sabha","Before the awards are read out, the festival simply plays.","music"],
   ["17:30 – 19:00","Discovery","Valedictory","Awards ceremony","Winners of the film and music competitions are announced and presented.","both"]]},
- {n:"Day 04",date:"Sun 27 Oct",slots:[
+ {n:"Day 04",date:"Sun 25 Oct",slots:[
   ["14:00 – 15:30","Outdoor main stage","Workshop","Stage to Screen","The anatomy of a live show, walked through on the festival's own stage as it is built.","music"],
   ["16:00 – 17:15","Discovery","Fireside chat","Before the Encore","Hours before the lights come on, the headline artist steps into a quieter room.","music"],
   ["18:00 – 19:00","Outdoor stage","Curtain raiser","The Opening Act","Winners of The MicDrop and Jam Wars open the main stage.","music"],

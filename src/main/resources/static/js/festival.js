@@ -147,12 +147,12 @@ const counters=document.querySelectorAll('.stat .n');
 const cio=new IntersectionObserver((es,obs)=>{
   es.forEach(e=>{
     if(!e.isIntersecting) return;
-    const el=e.target, to=+el.dataset.to, pre=el.dataset.prefix?'₹':'';
-    if(reduce){el.textContent=pre+to; obs.unobserve(el); return;}
+    const el=e.target, to=+el.dataset.to, pre=el.dataset.prefix?'₹':'',suffix=el.dataset.suffix||'';
+    if(reduce){el.textContent=pre+to+suffix; obs.unobserve(el); return;}
     const dur=1100, t0=performance.now();
     const step=t=>{
       const p=Math.min(1,(t-t0)/dur), v=Math.round(to*(1-Math.pow(1-p,3)));
-      el.textContent=pre+v;
+      el.textContent=pre+v+suffix;
       if(p<1) requestAnimationFrame(step);
     };
     requestAnimationFrame(step); obs.unobserve(el);

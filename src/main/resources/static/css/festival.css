@@ -822,6 +822,13 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
 .slide.active {
     opacity: 1;
 }
+.festival-lockup {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+}
 
 /* Tablet */
 @media (max-width:768px){

@@ -161,7 +161,7 @@ const cio=new IntersectionObserver((es,obs)=>{
 counters.forEach(c=>cio.observe(c));
 
 /* -------- countdown -------- */
-const DEADLINE=new Date('2026-09-06T23:59:00+05:30').getTime();
+const DEADLINE=new Date('2026-09-26T23:59:00+05:30').getTime();
 function tick(){
   const ms=DEADLINE-Date.now();
   const set=(id,v)=>document.getElementById(id).firstChild.nodeValue=String(v).padStart(2,'0');

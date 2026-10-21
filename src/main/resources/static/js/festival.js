@@ -11,7 +11,7 @@ document.querySelectorAll('.dd').forEach(dd=>{
   document.addEventListener('keydown',e=>{if(e.key==='Escape'){setOpen(false); btn.blur();}});
 });
 
-/* -------- marquee bands -------- */
+/* -------- marquee bands --------
 const bands={
   band1:["Frames Beyond Borders","Sounds Beyond Borders"],
   band2:["Reel Futures","Global Echoes","Future Frequencies","Roots &amp; Routes"],
@@ -20,63 +20,66 @@ const bands={
 Object.entries(bands).forEach(([id,words])=>{
   document.getElementById(id).innerHTML=[...words,...words,...words,...words].map(w=>'<span>'+w+'</span>').join('');
 });
+*/
+
+/* -------- marquee bands -------- */
+const bands = {
+    band1: ["Logo1.png","Logo2.png","Logo3.png","Logo4.png","Logo5.jpg","Logo6.jpg","Logo7.jpg","Logo8.png","Logo9.png","Logo10.png","Logo11.png","Logo12.png","Logo13.png","Logo14.png","Logo15.png","Logo16.png","Logo17.jpeg"].map((file,i)=>`<img src="/images/${file}" class="band-logo" alt="Sponsor Logo ${i+1}">`),
+    band2: ["Reel Futures","Global Echoes","Future Frequencies","Roots & Routes"],
+    band3: ["Create","Collaborate","Cross Borders"]
+};
+Object.entries(bands).forEach(([id,words])=>{
+    document.getElementById(id).innerHTML = id === "band1"
+        ? [...words,...words].map(w=>`<span class="logo-item">${w}</span>`).join('')
+        : [...words,...words,...words,...words].map(w=>`<span>${w}</span>`).join('');
+});
 
 /* -------- programme data -------- */
 const DAYS=[
- {n:"Day 01",date:"Thu 22 Oct",slots:[
-  ["10:00 – 11:15","Discovery","Inauguration","Inauguration","Invocation music, mascot launch, addresses by the Guests of Honour and a keynote from the Chief Guest.","both"],
-  ["11:15 – 12:30","Discovery","Fireside chat","From Script to Strike","Building high-intensity cinema: writing under pressure, staging action and holding an audience.","film"],
-  ["12:30 – 13:30","Discovery","Fireside chat","The Sound Between the Frames","Sound is the half of cinema an audience feels but never sees — from location recording to the final mix.","music"],
-  ["13:30 – 14:15","—","Break","Lunch","","brk"],
-  ["14:15 – 15:15","Discovery","Open session","Unscripted","Shifting the spotlight from performance to personality, in front of students.","both"],
-  ["14:15 – 16:15","AB3 – 201","Workshop","Framing the Vision","How lighting, composition and camera movement build a shot worth looking at.","film"],
-  ["14:15 – 16:15","AB3 – 203","Workshop","Cut. Colour. Create.","Editing and cinematic colour grading — turning raw footage into something that lands.","film"],
-  ["14:15 – 16:15","AB3 – 205","Workshop","The Bedroom Studio","Building a track from scratch on a laptop, the way most records are made now.","music"],
-  ["14:30 – 15:30","Online","Panel","The Filmmaker's Forum","Animation, documentary and short-format filmmakers on craft and economics.","film"],
-  ["15:30 – 17:00","Discovery","Screening + chat","History Breathes: Lal Bahadur Shastri","A documentary on the freedom fighter and former Prime Minister, followed by an interaction.","film"],
-  ["15:30 – 17:00","Online","Panel","The Business of Indie Cinema","Developing a narrative, then financing it — production, crowdfunding and everything between.","film"],
-  ["16:30 – 18:30","AB3 – 301","Workshop","Pixels to Perfection","Capturing sharp, high-quality visuals with modern digital camera systems.","film"],
-  ["16:30 – 18:30","AB3 – 303","Workshop","Beyond the Frame","Large-format filmmaking, and what the format changes about how you shoot.","film"],
-  ["16:30 – 18:30","AB3 – 305","Workshop","Mic Check","Live sound, stage acoustics and the art of the mix.","music"],
-  ["17:30 – 18:30","Online","Panel","The Editor's Cut","Editors, colourists and VFX artists on building worlds after the shoot is over.","film"],
-  ["19:00 – 20:00","Outdoor stage","Showcase","The Runway Edit","The runway reimagined as cinema, where every garment is a frame.","both"],
-  ["20:00 – 21:00","Outdoor stage","Competition","The MicDrop","A single spotlight, a silent stage and a voice that dares to fill it.","music"]]},
- {n:"Day 02",date:"Fri 23 Oct",slots:[
-  ["10:00 – 11:30","Online","Fireside chat","The Pulse of the Scene","How filmmakers build emotional truth out of image, sound and silence.","film"],
-  ["10:00 – 12:00","Auro Student Center","Workshop","Rhythm in Motion","Choreographing to the language of musical tempo.","music"],
-  ["10:00 – 12:00","Executive Classroom","Workshop","Lighting the Mood","Light, colour and shadow, and the psychology of how an audience reads them.","film"],
-  ["10:30 – 12:30","Discovery","Screening","Cinematic Spotlight","The nominated and selected films of AU-IFMF 2026.","film"],
-  ["11:45 – 13:00","Online","Fireside chat","Permission to Fall Apart","Directors and actors on trust, tension and the vulnerability of performance.","film"],
-  ["12:00 – 13:00","AB3","Workshop","Design Decode","A crash course in layout, typography, colour theory and visual hierarchy.","film"],
-  ["12:00 – 13:00","AB3","Workshop","Cinema in Your Pocket","Mobile filmmaking essentials — shooting, framing, lighting and cutting on a phone.","film"],
-  ["12:00 – 13:00","AB3 – 205","Workshop","The Songwriter's Room","Finding a central image and writing the line that stays.","music"],
-  ["13:00 – 14:00","—","Break","Lunch","","brk"],
-  ["14:00 – 15:00","Discovery","Fireside chat","From Riyaaz to Reels","Behind every recognisable voice: years of training, rejection and reinvention.","music"],
-  ["14:00 – 15:30","Auro Student Center","Masterclass","Scoring the Silence","How a score tells an audience what to feel before a word is spoken.","music"],
-  ["14:00 – 15:30","AB3","Workshop","The Greenlight Room","Film licensing and certification: where stories earn their right to be seen.","film"],
-  ["14:00 – 15:30","AB3","Workshop","Licensed to Play","Music licensing and certification, from creation to clearance.","music"],
-  ["14:00 – 15:30","Online","Fireside chat","Zero to Screen","Making cinema with nothing but vision, and getting it watched.","film"],
-  ["15:30 – 17:00","Discovery","Screening + chat","History Breathes: R K Laxman","A documentary on the cartoonist, followed by an interaction with his family.","film"],
-  ["15:30 – 17:00","Online","Panel","Animated Realities","Bringing unreal worlds to life, from idea to movement.","film"],
-  ["17:30 – 18:30","Outdoor stage","Competition","Jam Wars","Battle of the bands — a high-energy live jam on the main stage.","music"],
-  ["19:00 – 20:30","Outdoor stage","Competition","Groove Clash","The dance face-off, where every move speaks louder than words.","music"]]},
- {n:"Day 03",date:"Sat 24 Oct",slots:[
-  ["10:00 – 11:30","Discovery","Screening + chat","History Breathes: Anjaan","A documentary on the lyricist, followed by an interaction with his family.","film"],
-  ["10:00 – 13:00","Executive Classroom","Jury viewing","Cinematic Spotlight","Closed jury screening of the nominated and selected films.","film"],
-  ["10:30 – 12:00","Auro Student Center","Lecture-demo","The Living Raag","The classical foundation under popular music, performed as it is explained.","music"],
-  ["11:00 – 12:30","Online","Panel","Streams, Royalties &amp; the Independent Artist","Distribution has never been easier and earning never more complicated.","music"],
-  ["11:45 – 13:15","Discovery","Screening + chat","History Breathes: Vinda Karandikar","A documentary on the Jnanpith-winning poet, followed by an interaction.","film"],
-  ["12:15 – 13:15","Auro Student Center","Fireside chat","Bhasha, Beat &amp; Belonging","The music growing outside Bollywood, in the languages India actually sings in.","music"],
-  ["13:15 – 14:15","—","Break","Lunch","","brk"],
-  ["14:15 – 15:15","Discovery","Screening","Special screening","A selected short film, followed by an interaction with the filmmaker.","film"],
-  ["14:15 – 15:45","Online","Panel","The Music Supervisor's Playlist","One song in the right scene can outlive the film around it.","music"],
-  ["15:30 – 17:00","Discovery","Screening","Cinematic Spotlight","The second public screening block of nominated and selected films.","film"],
-  ["15:30 – 17:00","Outdoor stage","Showcase","Sur Sabha","Before the awards are read out, the festival simply plays.","music"],
-  ["17:30 – 19:00","Discovery","Valedictory","Awards ceremony","Winners of the film and music competitions are announced and presented.","both"]]},
- {n:"Day 04",date:"Sun 25 Oct",slots:[
-  ["14:00 – 15:30","Outdoor main stage","Workshop","Stage to Screen","The anatomy of a live show, walked through on the festival's own stage as it is built.","music"],
-  ["16:00 – 17:15","Discovery","Fireside chat","Before the Encore","Hours before the lights come on, the headline artist steps into a quieter room.","music"],
-  ["18:00 – 19:00","Outdoor stage","Curtain raiser","The Opening Act","Winners of The MicDrop and Jam Wars open the main stage.","music"],
+    {n:"Day 01",date:"Thu 22 Oct",slots:[
+            ["09:00 – 10:00","Discovery","Inauguration","Key Note Address","Festival inauguration with keynote addresses by the Chief Guest and the Guest of Honour. CHIEF GUEST: Shri. Darshan Jariwala · GUEST OF HONOUR: Shri. Mayur Puri","both"],
+            ["10:00 – 12:15","Discovery","Masterclass","From Page to Screen: The Art of Character-Driven Storytelling and Dialogue Writing in Indian Cinema","How writers build memorable characters and write dialogue that feels true in Indian cinema. SPEAKERS: Mr. Siddharth Singh · Ms. Garima Wahal","film"],
+            ["12:15 – 13:00","—","Break","Lunch break","","brk"],
+            ["13:00 – 14:00","Executive Classroom","Masterclass","More Than Just a Voice","The craft and career behind professional voice work in ads, film, animation, dubbing and podcasts. SPEAKER: Mr. Rajesh Kava","both"],
+            ["13:00 – 14:00","Wisdom","Panel Discussion","Rights, Reach & Revenue: The Business Behind Content in a Global Media World","How content is protected, marketed and sold across markets and platforms, from contract to global screen. SPEAKERS: Mr. Debkumar Dasgupta · Mr. Dominic D'Souza · Mr. Sanjay Narayanan Pisharody · MODERATOR: Prof. Ujjwal A Chowdhury","both"],
+            ["14:00 – 15:00","Executive Classroom","Masterclass","From Idea to Audience: Developing, Producing and Promoting Indian Stories Across TV, Film and the AI Era","Following an Indian story through development, production and promotion across TV, film and the AI era. SPEAKER: Ms. Poonam Shroff","film"],
+            ["14:00 – 15:00","Wisdom","Panel Discussion","The Gujarati Screen: Rooted Stories, New Visions","The creative revival of Gujarati cinema and how rooted local stories reach national and global screens. SPEAKERS: Mr. Abhishek Shah · Mr. Ishaan Randeria · MODERATOR: Mr. Mihir Pathak","film"],
+            ["14:00 – 15:00","Online (Zoom)","Panel Discussion","One Story, Many Worlds: Cinema Across Cultures, Languages and Borders","International filmmakers on how personal stories cross languages, cultures and borders. SPEAKERS: Ms. Dari Gushan · Ms. Mari Cielo Pajares · Mr. Rai Pendet · Mr. Mehdi Malecki · Mr. Eman Thabet · MODERATOR: Mr. Prashit Bhatt","film"],
+            ["15:00 – 15:15","—","Break","Tea break","","brk"],
+            ["15:15 – 16:15","Executive Classroom","Masterclass","Cinema in 60 Seconds: Making Reels with a Filmmaker’s Eye","How sports-cinema storytelling moves from the big screen into short brand films and reels. SPEAKERS: Mr. Manish Bhati · Mr. Kartik Negandhi","film"],
+            ["15:15 – 16:15","Wisdom","Fireside Chat","From Reel to Royalty: Who Owns the Song in India’s Streaming Era?","Who owns a film song in India's streaming era, and who gets paid when it plays. SPEAKERS: Ms. Kaveri Ingle · Mr. Daryl Suchitha · MODERATOR: Mr. Utsav Raval","music"],
+            ["16:00 – 17:00","Online (Zoom)","Panel Discussion","The Cinematic Aesthetic: Building Narrative Resonance through Visual Composition","How framing, light, colour and camera movement carry a story's emotion and meaning. SPEAKERS: Mr. Denny Chrisna · Mr. Giovanni Coevert · Mr. Ihab Fares · Mr. Jean Sidaner · MODERATOR: Mr. Rohit Purohit","film"]
+        ]},
+
+    {n:"Day 02",date:"Fri 23 Oct",slots:[
+            ["10:00 – 11:00","Discovery","Panel Discussion","The Female Gaze","How women's perspectives shape characters, forms and stories across film, theatre and digital platforms. SPEAKERS: Ms. Anamika Haksar · Ms. Anusha Nandkumar · MODERATOR: Mr. Sartaz Jaffri","film"],
+            ["10:00 – 12:00","Executive Classroom","Workshop","Frame to Feature: Visual Storytelling with Canon","Hands-on: composition, lighting and sequencing with Canon gear, ending in a five-image photo story critique. SPEAKER: Mr. Dhruvin Jain","film"],
+            ["11:00 – 12:00","Discovery","Masterclass","Writing the Idea, Owning the IP: A Creator’s Journey from Reality TV to Spy Thrillers to Ghazals","Moving one idea across TV, OTT and music, and going from writer-for-hire to IP owner. SPEAKER: Mr. Vaibhav Modi","both"],
+            ["12:15 – 13:00","—","Break","Lunch break","","brk"],
+            ["13:00 – 15:00","Executive Classroom","Film Screening","Borderlands","Screening of Borderlands, followed by a conversation on real-life storytelling in documentary. SPEAKER: Mr. Samarth Mahajan","film"],
+            ["13:00 – 14:00","Wisdom","Panel Discussion","From Brief to Binge: Marketing Stories in the Streaming Era","Turning creative briefs into campaigns that win audiences in the OTT era. SPEAKERS: Ms. Ankita Singh · Mr. Ashutosh Chaturvedi · Ms. Kanika Dua · MODERATOR: RJ Palak","film"],
+            ["14:00 – 16:30","Classroom / Discovery","Film Screening","Ghode Ko Jalebi Khilane Le Ja Riya Hoon","Screening of Anamika Haksar's experimental film on urban life and marginalised voices. SPEAKER: Ms. Anamika Haksar","film"],
+            ["14:00 – 16:00","Wisdom","Workshop","The Colour of Cinema: Crafting the Film Look Through the Lens","Designing a film look through lens, light and colour, with a live shooting demonstration. SPEAKER: Mr. Shadab Alam","film"],
+            ["14:00 – 15:30","Online (Zoom)","Panel Discussion","PIXELS, PAPERS & POSSIBILITIES: The Artistry Behind the Technology of Animation","Animation filmmakers on character design, world-building, and where art, technology and AI meet. SPEAKERS: Ms. Hannah Schogger · Mr. Cristian Damnotti · Mr. Radheya Jang · MODERATOR: Mr. Aakash Jain","film"],
+            ["15:00 – 15:15","—","Break","Tea break","","brk"],
+            ["15:15 – 16:15","Executive Classroom","Fireside Chat","Stories That Dare: Making Socially Relevant Cinema for the Mainstream / साहसी कहानियाँ: मुख्यधारा के लिए सामाजिक सरोकार का सिनेमा","Making socially relevant cinema for mainstream audiences, from Road to Sangam to OMG 2 and Ohh My Dog. SPEAKER: Mr. Amit Rai · MODERATOR: Ms. Rekha Khan","film"],
+            ["16:00 – 17:00","Wisdom","Fireside Chat","Content Is King, But Who Builds the Kingdom? Making and Monetising Stories in India's OTT Era","The economics of OTT content: how stories are developed, funded, produced and made to pay. SPEAKERS: Mr. Praver Awal · Ms. Archita Jasani · MODERATOR: Mr. Pankaj Mavchi","film"],
+            ["16:00 – 17:30","Online (Zoom)","Panel Discussion","REALITY REFRAMED: The Art of Finding Stories in the World Around Us","Documentary filmmakers on the craft and ethics of finding stories in the world around us. SPEAKERS: Mr. Antonio Aleixo · Mr. Ali Sedaghat · Mr. Amir Rezaei · MODERATOR: Mr. Sumit Mishra","film"]
+        ]},
+
+    {n:"Day 03",date:"Sat 24 Oct",slots:[
+            ["10:00 – 11:00","Wisdom","Panel Discussion","From Idea to Audience: How Stories Get Made Across TV, OTT and Live Stages","How stories are developed, pitched, produced and promoted across TV, OTT and live stages. SPEAKERS: Ms. Vaneeta Sridhar · Ms. Ritika Bajaj · Ms. Ratisatu Galani · MODERATOR: RJ Palak","both"],
+            ["11:00 – 12:00","Executive Classroom","Masterclass","Selling the Story: The Art and Craft of Promotional Campaigns","How promotional campaigns are built: trailers, posters, social buzz and launch-day strategy. SPEAKER: Mr. Partho Ghosh","film"],
+            ["11:00 – 12:00","Wisdom","Panel Discussion","The Last Mile of Cinema: How a Film Reaches the Screen and Earns Its Money","How a film is acquired, released, given screens and shows, and how its revenue is shared. SPEAKERS: Mr. Utpal Acharya · Mr. Kuldeep Singh Sisodiya · MODERATOR: Mr. Mahesh Digrajkar","film"],
+            ["11:00 – 12:00","Online (Zoom)","Panel Discussion","THE SOUND OF CINEMA: How Sound Shapes Emotion, Atmosphere and the Cinematic Experience","How sound design, music and silence build atmosphere, tension and immersive cinematic worlds. SPEAKERS: Ms. Dari Gushan · Mr. Abs Refat · Mr. Pierre Maurin · Mr. Samy Aljane · MODERATOR: Rashi Dhariwal","music"],
+            ["12:15 – 13:00","—","Break","Lunch break","","brk"],
+            ["14:00 – 15:00","Discovery","Fireside Chat","Use of Visuals and Sound in Action Storytelling","How camera, editing, choreography and sound turn fights, chases and stunts into storytelling. SPEAKER: Mr. Dilip Ghosh","both"],
+            ["14:00 – 15:00","Wisdom","Masterclass","The Producer’s Cut: Turning a Brand Brief into Screen-Ready Content","The producer's role in turning a brand brief into screen-ready content, plus careers in production. SPEAKER: Mr. Supriyo Sen Sharma","film"],
+            ["14:00 – 15:00","Online (Zoom)","Panel Discussion","Writers panel: BEYOND LANGUAGE, INTO STORY / Can a Story Speak to the World Without Losing Its Roots?","International screenwriters on keeping stories rooted in culture while reaching audiences across languages. SPEAKERS: Mr. Noé Després · Mr. Kianoush Eslami · Mr. Morteza Solgi · Mr. Samuel Bester · MODERATOR: Ms. Kajol Sanjay Kalia","film"],
+            ["15:00 – 15:15","—","Break","Tea break","","brk"],
+            ["15:30 – 17:00","—","Closing Ceremony","Valedictory Session / Key Note Address","Closing ceremony with the valedictory keynote address by the Chief Guest. CHIEF GUEST: Shri. Girish Kohli","both"]
+        ]},
+{n:"Day 04",date:"Sun 25 Oct",slots:[
   ["19:00 – 21:30","Outdoor stage","Proshow","Proshow","The festival's grand crescendo: a full-scale concert to close the four days.","both"]]}
 ];
 
